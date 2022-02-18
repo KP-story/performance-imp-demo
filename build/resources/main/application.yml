@@ -1,0 +1,53 @@
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+spring:
+  profiles:
+    active: local
+  application:
+    name: chat
+  data:
+    redis:
+      repositories:
+        enabled: false
+  main:
+    allow-bean-definition-overriding: true
+  servlet:
+    multipart:
+      max-file-size: 2GB
+      max-request-size: 2GB
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        generate_statistics: true
+        jdbc:
+          batch_size: 100
+        order_inserts: true
+        order_updates: true
+        query:
+          plan_cache_max_size: 64
+          plan_parameter_metadata_max_size: 32
+          in_clause_parameter_padding: true
+        default_schema: khanhlv
+        dialect: org.hibernate.dialect.PostgreSQL10Dialect
+timezone:
+  default: Asia/Ho_Chi_Minh
+server:
+  port: 8090
+  servlet:
+    context-path: /chat
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs
+  app-description: This is description for AMS API
+  app-version: 1.0

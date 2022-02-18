@@ -1,0 +1,22 @@
+spring:
+  datasource:
+      url: jdbc:postgresql://35.229.209.232:5432/marketing?currentSchema=khanhlv&reWriteBatchedInserts=true
+      username: postgres
+      password: postgre@vntravel@2021
+      minimumIdle: 1
+      maximumPoolSize: 10
+      maxLifetime: 18000000
+      leakDetectionThreshold: 60000
+
+#
+#logging:
+#    level:
+#        org:
+#            springframework:
+#                data:
+#                    elasticsearch:
+#                        core: DEBUG
+#                        client:
+#                            WIRE: TRACE
+#        org.hibernate.resource.jdbc.internal: TRACE
+#        org.hibernate.type.descriptor.sql: TRACE
